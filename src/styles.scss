@@ -1,1 +1,39 @@
-/* You can add global styles to this file, and also import other style files */
+@import url("https://fonts.googleapis.com/css2?family=Happy+Monkey&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500&display=swap");
+
+body {
+  margin: 0;
+  height: 100vh;
+}
+
+// For Happy Monkey font
+.happy-monkey-text {
+  font-family: "Happy Monkey", sans-serif;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 20px;
+  margin: 0;
+  line-height: 25px;
+
+  &--big {
+    font-size: 33px;
+  }
+
+  &--white {
+    color: white;
+  }
+}
+
+// For Inter font
+.inter-text {
+  font-family: "Inter", sans-serif;
+  font-style: normal;
+  font-weight: 700;
+  font-size: 36px;
+  line-height: 44px;
+  margin: 0;
+
+  &--small {
+    font-size: 20px;
+  }
+}
