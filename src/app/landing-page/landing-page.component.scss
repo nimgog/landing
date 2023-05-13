@@ -11,6 +11,14 @@
       #ff9c5a 91.88%
     );
   }
+
+  &--lavender-gradient {
+    background: linear-gradient(
+      180deg,
+      rgba(255, 255, 255, 0.89) -0.47%,
+      #c2c6e6 91.88%
+    );
+  }
 }
 
 .content-container {
@@ -75,7 +83,8 @@ img {
 
 .button-container {
   display: flex;
-  justify-content: center;
+  align-items: center;
+  flex-direction: column;
   .offer-button {
     width: 200px;
     border-radius: 3rem;
