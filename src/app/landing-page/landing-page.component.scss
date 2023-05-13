@@ -13,6 +13,10 @@
   }
 }
 
+.content-container {
+  padding: 0 5px;
+}
+
 .header-container {
   height: 4rem;
   display: flex;
@@ -57,6 +61,16 @@ img {
   display: flex;
   flex-direction: column;
   align-items: flex-end;
+}
+
+.offer-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  &__text {
+    display: flex;
+    flex-direction: column;
+  }
 }
 
 .button-container {
