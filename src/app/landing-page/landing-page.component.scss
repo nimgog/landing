@@ -1,6 +1,8 @@
 .page-container {
-  height: 100%;
-  padding: 0 5px;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 
   &--orange-gradient {
     background: linear-gradient(
@@ -20,6 +22,18 @@
 
 .image-container {
   height: 25rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  @media only screen and (max-width: 375px) {
+    height: 15rem;
+  }
+
+  img {
+    height: 100%;
+    width: auto;
+  }
 }
 
 img {
@@ -28,7 +42,8 @@ img {
 }
 
 .usp-container {
-  height: 6.375rem;
+  height: 100%;
+  margin: 0.625rem 0;
   align-items: center;
   display: flex;
 
@@ -64,12 +79,7 @@ img {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
-  position: fixed;
-  bottom: 0;
-  width: 101%;
   padding-bottom: 0px;
-  left: 0;
-  right: 0;
 
   .navigate-button {
     height: 60px;
