@@ -49,11 +49,11 @@
     </div>
   </div>
   <div class="navigate-container">
-    <div class="navigate-button" [class.disabled]="index === 0" (click)="previousProduct()">
+    <div class="navigate-button" [class.disabled]="index === 0" [style.background]="prevColor" (click)="previousProduct()">
       <img class="icon-image" src="assets/icon/arrow-down.png" alt="previous product" />
       <p class="happy-monkey-text happy-monkey-text--white happy-monkey-text--big">Back</p>
     </div>
-    <div class="navigate-button" [class.disabled]="index >= products.length -1" (click)="nextProduct()">
+    <div class="navigate-button" [class.disabled]="index >= products.length -1" [style.background]="nextColor" (click)="nextProduct()">
       <p class="happy-monkey-text happy-monkey-text--white happy-monkey-text--big">More</p>
       <img class="icon-image" src="assets/icon/arrow-up.png" alt="next product" />
     </div>
