@@ -61,7 +61,7 @@
       class="navigate-button"
       [class.disabled]="index === 0"
       [style.background-color]="
-        this.index > 0 ? this.products[this.index - 1].productColor : ' black'
+        prevColor
       "
       (click)="previousProduct()"
     >
@@ -80,7 +80,7 @@
       class="navigate-button"
       [class.disabled]="index >= products.length - 1"
       [ngStyle]="{
-        'background-color': this.index < this.products.length -1 ? this.products[this.index + 1].productColor : 'black'
+        'background-color': nextColor
       }"
       (click)="nextProduct()"
     >

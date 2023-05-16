@@ -69,7 +69,6 @@ export class LandingPageComponent implements OnInit {
       default:
         this.products = products_11;
     }
-    console.log('products: ', this.products);
   }
 
   ngOnInit(): void {
@@ -80,6 +79,9 @@ export class LandingPageComponent implements OnInit {
       this.discountUrl +
       this.redirect +
       this.product.productPageUrl;
+
+    this.setNextColor();
+    this.setPrevColor();
   }
 
   nextProduct(): void {
@@ -94,13 +96,27 @@ export class LandingPageComponent implements OnInit {
     this.setProduct();
   }
 
-  setProduct(): void {
+  private setProduct(): void {
     this.product = this.products[this.index];
     this.buttonUrl =
       this.baseUrl +
       this.discountUrl +
       this.redirect +
       this.product.productPageUrl;
+    this.setNextColor();
+    this.setPrevColor();
+  }
+
+  private setNextColor(): void {
+    this.nextColor =
+      this.index < this.products.length - 1
+        ? this.products[this.index + 1].productColor
+        : 'black';
+  }
+
+  private setPrevColor(): void {
+    this.prevColor =
+      this.index > 0 ? this.products[this.index - 1].productColor : ' black';
   }
 
   goToProduct(): void {

@@ -19,6 +19,42 @@
       #c2c6e6 91.88%
     );
   }
+
+  &--white-gradient {
+    background: linear-gradient(
+      180deg,
+      rgba(255, 255, 255, 0.89) -0.47%,
+      #e0dac8 91.88%
+    );
+  }
+
+  &--black-gradient {
+    background: linear-gradient(
+      180deg,
+      rgba(255, 255, 255, 0.89) -0.47%,
+      #1f1f1f 91.88%
+    );
+  }
+
+  &--blue-gradient {
+    background: linear-gradient(
+      180deg,
+      rgba(255, 255, 255, 0.89) -0.47%,
+      #455c74 91.88%
+    );
+  }
+
+  &--green-gradient {
+    background: linear-gradient(
+      180deg,
+      rgba(255, 255, 255, 0.89) -0.47%,
+      #344e4e 91.88%
+    );
+  }
+}
+
+.subtext-container {
+  text-align: right;
 }
 
 .content-container {
@@ -37,7 +73,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
-
+  overflow: hidden;
   @media only screen and (max-width: 375px) {
     height: 15rem;
   }
