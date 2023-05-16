@@ -1,23 +1,30 @@
-<div class="page-container" ngClass={{product.landingPageBackgroundClass}}>
+<div class="page-container" ngClass="{{ product.landingPageBackgroundClass }}">
   <div class="content-container">
     <div class="header-container">
-      <img class="logo-img" src="assets/img/coco_logo_web.png" alt="Welcome to coco casing">
+      <img
+        class="logo-img"
+        src="assets/img/coco_logo_web.png"
+        alt="Welcome to coco casing"
+      />
     </div>
     <div class="title-container">
       <h1 class="inter-text">Ultimate Protection</h1>
       <div class="subtext-container">
-        <h3 class="happy-monkey-text">{{product.landingPageSubtitle}}</h3>
+        <h3 class="happy-monkey-text">{{ product.landingPageSubtitle }}</h3>
       </div>
     </div>
     <div class="image-container">
-      <img src="{{product.productImageUrl}}" alt="The Coco Package - Orange" />
+      <img
+        src="{{ product.productImageUrl }}"
+        alt="The Coco Package - Orange"
+      />
     </div>
     <div class="offer-container">
       <div class="offer-container__text">
         <p class="happy-monkey-text happy-monkey-text--big">Offer</p>
         <p class="happy-monkey-text happy-monkey-text--big">ends in:</p>
       </div>
-      <app-countdown-timer></app-countdown-timer>
+      <app-countdown-timer [TimeLimit]="inputDate"></app-countdown-timer>
     </div>
     <div class="usp-container">
       <div class="usp-item">
@@ -36,26 +43,57 @@
         />
       </div>
       <div class="usp-item">
-        <img src="assets/img/usp-durability.png" alt="Coco Case military grade" />
+        <img
+          src="assets/img/usp-durability.png"
+          alt="Coco Case military grade"
+        />
       </div>
     </div>
     <div class="button-container">
-      <p class="inter-text--fineprint">
-        The discount is applied on checkout
-      </p>
+      <p class="inter-text--fineprint">The discount is applied on checkout</p>
       <div class="offer-button" (click)="goToProduct()">
         <p class="inter-text inter-text--small">Get your 20% Off</p>
       </div>
     </div>
   </div>
   <div class="navigate-container">
-    <div class="navigate-button" [class.disabled]="index === 0" [style.background]="prevColor" (click)="previousProduct()">
-      <img class="icon-image" src="assets/icon/arrow-down.png" alt="previous product" />
-      <p class="happy-monkey-text happy-monkey-text--white happy-monkey-text--big">Back</p>
+    <div
+      class="navigate-button"
+      [class.disabled]="index === 0"
+      [style.background-color]="
+        this.index > 0 ? this.products[this.index - 1].productColor : ' black'
+      "
+      (click)="previousProduct()"
+    >
+      <img
+        class="icon-image"
+        src="assets/icon/arrow-down.png"
+        alt="previous product"
+      />
+      <p
+        class="happy-monkey-text happy-monkey-text--white happy-monkey-text--big"
+      >
+        Back
+      </p>
     </div>
-    <div class="navigate-button" [class.disabled]="index >= products.length -1" [style.background]="nextColor" (click)="nextProduct()">
-      <p class="happy-monkey-text happy-monkey-text--white happy-monkey-text--big">More</p>
-      <img class="icon-image" src="assets/icon/arrow-up.png" alt="next product" />
+    <div
+      class="navigate-button"
+      [class.disabled]="index >= products.length - 1"
+      [ngStyle]="{
+        'background-color': this.index < this.products.length -1 ? this.products[this.index + 1].productColor : 'black'
+      }"
+      (click)="nextProduct()"
+    >
+      <p
+        class="happy-monkey-text happy-monkey-text--white happy-monkey-text--big"
+      >
+        More
+      </p>
+      <img
+        class="icon-image"
+        src="assets/icon/arrow-up.png"
+        alt="next product"
+      />
     </div>
   </div>
 </div>

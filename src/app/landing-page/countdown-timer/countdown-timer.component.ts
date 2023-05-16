@@ -1,4 +1,4 @@
-import { AfterViewInit, Component, ElementRef, OnInit, ViewChild } from '@angular/core';
+import { AfterViewInit, Component, ElementRef, Input, OnInit, ViewChild } from '@angular/core';
 
 @Component({
   selector: 'app-countdown-timer',
@@ -6,6 +6,7 @@ import { AfterViewInit, Component, ElementRef, OnInit, ViewChild } from '@angula
   styleUrls: ['./countdown-timer.component.scss']
 })
 export class CountdownTimerComponent implements OnInit, AfterViewInit {
+  @Input() TimeLimit!: number[]
   date: any;
   now: any;
   targetDate: any = new Date(2023, 4, 15);
@@ -23,6 +24,13 @@ export class CountdownTimerComponent implements OnInit, AfterViewInit {
   }
 
   ngAfterViewInit() {
+    console.log('time', this.TimeLimit)
+    this.targetDate = new Date(
+      this.TimeLimit[0],
+      this.TimeLimit[1],
+      this.TimeLimit[2]
+    );
+    this.targetTime = this.targetDate.getTime();
     setInterval(() => {
       this.tickTock();
       this.difference = this.targetTime - this.now;
