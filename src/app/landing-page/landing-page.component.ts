@@ -45,14 +45,13 @@ export class LandingPageComponent implements OnInit {
       this.inputDate = [year, month, day];
     } else {
       const temp = this.date.split('-') ?? [];
-      this.inputDate = [Number(temp[0]), Number(temp[1]), Number(temp[2])];
+      this.inputDate = [Number(temp[0]), Number(temp[1]) - 1, Number(temp[2])];
     }
 
     this.subs.push(arSub);
   }
 
   private setProducts(series: string): void {
-    console.log(series);
     switch (series) {
       case '11':
         this.products = products_11;

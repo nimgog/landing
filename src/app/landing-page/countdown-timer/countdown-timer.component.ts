@@ -24,7 +24,6 @@ export class CountdownTimerComponent implements OnInit, AfterViewInit {
   }
 
   ngAfterViewInit() {
-    console.log('time', this.TimeLimit)
     this.targetDate = new Date(
       this.TimeLimit[0],
       this.TimeLimit[1],
