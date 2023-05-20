@@ -54,7 +54,7 @@
       </div>
     </div>
     <div class="button-container">
-      <p class="inter-text--fineprint">The discount is applied on checkout</p>
+      <p class="inter-text--fineprint" [ngClass]="index > 2 ? 'text-color--white' : 'text-color--black'">The discount is applied on checkout</p>
       <div class="offer-button" (click)="goToProduct()">
         <p class="inter-text inter-text--small">Get your 20% Off</p>
       </div>

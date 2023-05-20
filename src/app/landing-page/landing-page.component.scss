@@ -94,6 +94,10 @@ img {
   margin: 0.625rem 0;
   align-items: center;
   display: flex;
+  padding: 10px 5px;
+  background: black;
+  border-radius: 0.5rem;
+  filter: invert(1);
 
   .usp-item {
     width: 85.61375rem;
@@ -130,6 +134,14 @@ img {
     align-items: center;
     height: 60px;
   }
+}
+
+.text-color--white {
+  color: white !important;
+}
+
+.text-color--black {
+  color: black !important;
 }
 
 .navigate-container {
