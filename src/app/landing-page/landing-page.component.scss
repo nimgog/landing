@@ -127,7 +127,8 @@ img {
   flex-direction: column;
   .offer-button {
     width: 200px;
-    border-radius: 3rem;
+    border-radius: 1rem;
+    border: 2px solid black;
     background: white;
     display: flex;
     justify-content: center;
