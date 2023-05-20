@@ -30,6 +30,7 @@ export class LandingPageComponent implements OnInit {
   series: string = '';
   date: string = '';
   inputDate: number[] = [];
+  mobile: boolean = false;
 
   constructor(private activatedRoute: ActivatedRoute) {
     const arSub = this.activatedRoute.queryParams.subscribe((params) => {
@@ -81,6 +82,10 @@ export class LandingPageComponent implements OnInit {
 
     this.setNextColor();
     this.setPrevColor();
+
+    if (window.screen.width < 450) { // 768px portrait
+      this.mobile = true;
+    }
   }
 
   nextProduct(): void {

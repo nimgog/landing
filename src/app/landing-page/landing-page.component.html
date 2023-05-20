@@ -1,4 +1,8 @@
-<div class="page-container" ngClass="{{ product.landingPageBackgroundClass }}">
+<div
+  *ngIf="mobile"
+  class="page-container"
+  ngClass="{{ product.landingPageBackgroundClass }}"
+>
   <div class="content-container">
     <div class="header-container">
       <img
@@ -60,9 +64,7 @@
     <div
       class="navigate-button"
       [class.disabled]="index === 0"
-      [style.background-color]="
-        prevColor
-      "
+      [style.background-color]="prevColor"
       (click)="previousProduct()"
     >
       <img
@@ -95,5 +97,24 @@
         alt="next product"
       />
     </div>
+  </div>
+</div>
+<div
+  *ngIf="!mobile"
+  style="
+    height: 100vh;
+    width: 100vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  "
+>
+  <div style="height: 400px; width: 400px">
+    <img
+      style="height: auto; width: 100%"
+      src="assets/img/shrug.png"
+      alt="Uh oh.."
+    />
+    <h1>I'm not sure why you're here</h1>
   </div>
 </div>
